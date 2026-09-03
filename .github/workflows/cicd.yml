@@ -1,0 +1,31 @@
+# This is name of the workflow that will be displayed in the Actions tab
+name: CICD
+
+# Manual click delicer workflow
+on: 
+  workflow_dispatch: 
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      run: echo "Clone Code from Github
+      
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build docker container
+        run: echo "Docker container Build"
+  
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the container
+        run: echo "Testing container"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying the app
+        run: echo "Docker compose Deployed the app"
