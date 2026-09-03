@@ -1,0 +1,25 @@
+# My first Workflow
+name: first workflow
+
+on: 
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first build
+        run: sudo apt-get update && echo "update successful"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first test
+        run: ps && top
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first deploy
+        run: echo "Deployed successfully"
