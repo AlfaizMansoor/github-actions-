@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: first test
-        run: ps && top
+        run: df -h
 
   deploy:
     runs-on: ubuntu-latest
