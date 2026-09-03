@@ -4,6 +4,16 @@ name: CICD
 # Manual click delicer workflow
 on: 
   workflow_dispatch: 
+    inputs:
+      environment:
+        description: This is the workflow where this workflow runs
+        default: 'dev'
+        required: true
+        type: choice
+        options:
+          - dev
+          - prod
+          - staging
 
 jobs:
   code:
