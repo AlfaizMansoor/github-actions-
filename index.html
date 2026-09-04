@@ -1,1 +1,199 @@
-<h1>Hey, Alfaiz</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alfaiz Mansoor - DevOps Engineer</title>
+<style>
+  :root{
+    --bg: #101820;
+    --card: #182430;
+    --border: #2a3a48;
+    --accent: #4fd1c5;
+    --text: #e6edf3;
+    --muted: #8b9bab;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .container{ max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+  header{
+    text-align:center;
+    padding: 60px 20px 40px;
+  }
+  header h1{ font-size: 2.2rem; }
+  header p{ color: var(--accent); margin-top: 8px; font-size: 1.1rem; }
+  header p.sub{ color: var(--muted); margin-top: 4px; font-size: 0.95rem; }
+
+  nav{
+    display:flex;
+    justify-content:center;
+    gap: 24px;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+  nav a{ color: var(--text); text-decoration:none; font-size: 0.95rem; }
+  nav a:hover{ color: var(--accent); }
+
+  section{ margin-bottom: 50px; }
+  h2{
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+  }
+
+  .card{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px 20px;
+  }
+
+  .skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 10px;
+  }
+  .skills span{
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.88rem;
+  }
+
+  .project{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .project h3{ font-size: 1.05rem; margin-bottom: 6px; }
+  .project p{ color: var(--muted); font-size: 0.92rem; }
+
+  .contact-item{
+    display:flex;
+    justify-content:space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-item:last-child{ border-bottom:none; }
+  .contact-item span:first-child{ color: var(--muted); }
+  .contact-item a{ color: var(--accent); text-decoration:none; }
+
+  footer{
+    text-align:center;
+    padding: 24px 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>Er. Alfaiz Mansoor</h1>
+    <p>DevOps Engineer</p>
+    <p class="sub">B.Tech Final Year, Rajasthan Technical University (RTU), Kota</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="card">
+        <p>I'm a final-year B.Tech student at RTU Kota with a focus on DevOps engineering.
+        I enjoy automating build and deployment pipelines, managing cloud infrastructure,
+        and working with tools across the full DevOps lifecycle.</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span>Git &amp; GitHub</span>
+        <span>Jenkins</span>
+        <span>Docker</span>
+        <span>Kubernetes</span>
+        <span>Terraform</span>
+        <span>Ansible</span>
+        <span>AWS</span>
+        <span>Azure</span>
+        <span>Linux</span>
+        <span>Prometheus &amp; Grafana</span>
+        <span>Bash / Python</span>
+        <span>CI/CD Pipelines</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>CI/CD Pipeline for a Microservices App</h3>
+        <p>Automated build, test, and deployment using Jenkins and Docker.</p>
+      </div>
+
+      <div class="project">
+        <h3>Kubernetes Cluster Automation</h3>
+        <p>Deployed and scaled containerized apps on Kubernetes with Helm.</p>
+      </div>
+
+      <div class="project">
+        <h3>Infrastructure as Code with Terraform</h3>
+        <p>Provisioned cloud infrastructure on AWS using Terraform and Ansible.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <div class="contact-item">
+          <span>Email</span>
+          <a href="mailto:your.email@example.com">your.email@example.com</a>
+        </div>
+        <div class="contact-item">
+          <span>Phone</span>
+          <span>+91 00000 00000</span>
+        </div>
+        <div class="contact-item">
+          <span>GitHub</span>
+          <a href="#" target="_blank">github.com/yourusername</a>
+        </div>
+        <div class="contact-item">
+          <span>LinkedIn</span>
+          <a href="#" target="_blank">linkedin.com/in/yourusername</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    &copy; <span id="year"></span> Alfaiz Mansoor
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
