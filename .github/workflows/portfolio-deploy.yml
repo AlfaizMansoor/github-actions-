@@ -5,7 +5,7 @@ on:
         branches: [main]
         paths:
             - '**.html'
-            - 'portfolio-deploy.yml'
+            - portfolio-deploy.yml
             
 jobs:
     deploy:
