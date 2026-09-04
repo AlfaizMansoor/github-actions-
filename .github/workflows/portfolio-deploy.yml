@@ -5,8 +5,12 @@ on:
         branches: [main]
         paths:
             - '**.html'
-            - portfolio-deploy.yml
-            
+    workflow_dispatch: 
+
+permissions:
+    pages: write
+    id-token: write
+    
 jobs:
     deploy:
         runs-on: ubuntu-latest
