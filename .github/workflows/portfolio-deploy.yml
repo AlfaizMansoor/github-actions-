@@ -34,6 +34,8 @@ jobs:
             # STEP 3
             - name: upload static files
               uses: actions/upload-pages-artifact@v4
+              with:
+                path: _site/
                          
             # Deploy to github pages
             # STEP 4
