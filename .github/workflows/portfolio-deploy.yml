@@ -3,11 +3,9 @@ name: Portfolio
 on:
     push:
         branches: [main]
-
-permissions:
-    pages: write
-    id-token: write
-
+        paths:
+            - '**.html'
+            
 jobs:
     deploy:
         runs-on: ubuntu-latest
