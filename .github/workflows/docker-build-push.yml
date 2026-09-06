@@ -1,0 +1,31 @@
+name: docker build and push
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    build-and-push:
+        runs-on: ubunti-latest
+
+        steps:
+            - name: Code checkout
+              uses: actions/checkout@v4
+
+            - name: Log in to Docker Hub
+              uses: docker/login-action@v3
+              with:
+                    username: ${{ vars.DOCKER_USERNAME }}
+                    password: ${{ secrets.DOCKER_PASSWORD }}
+
+            - name: Build and push Docker Hub
+              uses: docker/build-push-action@v6
+              with:
+                    context: .
+                    push: true
+                    tags: |
+                        ${{ vars.DOCKER_USERNAME }}/github-actions--app:${{ github.ref }}
+                        ${{ vars.DOCKER_USERNAME }}/github-actions--app:latest
+
+                        
+
