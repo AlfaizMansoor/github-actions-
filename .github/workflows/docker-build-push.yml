@@ -23,9 +23,7 @@ jobs:
               with:
                     context: .
                     push: true
-                    tags: |
-                        ${{ vars.DOCKER_USERNAME }}/github-actions--app:${{ github.ref }}
-                        ${{ vars.DOCKER_USERNAME }}/github-actions--app:latest
+                    tags: ${{ vars.DOCKER_USERNAME }}/github-actions--app:latest
 
                         
 
