@@ -26,6 +26,7 @@ jobs:
                     tags: |
                         ${{ vars.DoOCKER_USERNAME }}/github-actions--app:${{ github.ref_name }}
                         ${{ vars.DOCKER_USERNAME }}/github-actions--app:latest
+                        ${{ vars.DoOCKER_USERNAME }}/github-actions--app:${{ github.sha }}
 
                         
 
