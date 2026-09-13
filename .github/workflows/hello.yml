@@ -3,10 +3,7 @@ name: Hello workflow
 
 # runs on atrigger
 on: 
-  push:
-    branches: [main]
-    paths:
-      - '**.html'
+  workflow_dispatch:
 
 # these are jobs inside workflow
 jobs:
