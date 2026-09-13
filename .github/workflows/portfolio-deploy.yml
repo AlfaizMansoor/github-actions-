@@ -1,7 +1,7 @@
 name: Portfolio
 
 on:
-    workflow_dispatch: 
+  workflow_dispatch: 
 
 permissions:
     pages: write
