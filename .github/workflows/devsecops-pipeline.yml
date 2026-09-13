@@ -4,30 +4,20 @@ on:
     workflow_dispatch:
      
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        steps:
-            #check-code-quality:
-            - name: Code Quality Check
-              uses: ./.github/workflows/code-quality.yml
+    check-code-quality:
+      uses: ./.github/workflows/code-quality.yml
 
-            # check-secrets:
-            - name: Secrets Check
-              uses: ./.github/workflows/secrets-check.yml
+    check-secrets:
+      uses: ./.github/workflows/secrets-check.yml
 
-            # check-dependency:
-            - name: Dependency Check
-              uses: ./.github/workflows/dependency-scan.yml
+    check-dependency:
+      uses: ./.github/workflows/dependency-scan.yml
             
-            # check-docker-lint:
-            - name: Docker Lint
-              uses: ./.github/workflows/docker-lint.yml
+    check-docker-lint:
+      uses: ./.github/workflows/docker-lint.yml
 
-
-            # doker-build-and-push:
-            - name: Docker Build and Push
-              uses: ./.github/workflows/docker-build-push.yml
+    docker-build-and-push:
+      uses: ./.github/workflows/docker-build-push.yml
             
-            # image-scan:
-            - name: Image Scan
-              uses: ./.github/workflows/image-scan.yml
+    image-scan:
+      uses: ./.github/workflows/image-scan.yml
