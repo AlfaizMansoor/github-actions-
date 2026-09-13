@@ -16,7 +16,7 @@ jobs:
                   python-version: "3.13"
 
             - name: Install dependencies
-              run: pip install pip-audit
+              run: pip install --no-cache-dir pip-audit
 
             - name: Run dependency check
               run: pip-audit -r requirements.txt
