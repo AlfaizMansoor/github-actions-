@@ -4,9 +4,7 @@ on:
   workflow_call: 
 
 permissions:
-    pages: write
-    id-token: write
-    contents: read
+  contents: read
     
 jobs:
     deploy:
