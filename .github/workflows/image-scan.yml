@@ -21,6 +21,5 @@ jobs:
               with:
                   severity-threshold: CRITICAL
                   image-ref: ${{ vars.DOCKERHUB_USERNAME }}/github-actions--app:${{ github.ref_name }}
-                  format: table
+                  format: json
                   exit-code: 1
-                  vuln-type: os,library
