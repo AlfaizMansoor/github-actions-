@@ -22,3 +22,8 @@ jobs:
                   severity: 'CRITICAL'
                   image-ref: ${{ vars.DOCKERHUB_USERNAME }}/github-actions--app:latest
                   exit-code: '1'
+
+            - name: Update Trivy DB
+              run: trivy image --download-db-only
+
+              
