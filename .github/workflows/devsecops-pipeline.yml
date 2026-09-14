@@ -31,6 +31,6 @@ jobs:
 
     deploy:
       needs: [image-scan]
-      uses: ./.github/workflows/cicd.yml
+      uses: ./.github/workflows/deploy-app.yml
       secrets: inherit
       
