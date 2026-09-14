@@ -27,4 +27,4 @@ jobs:
     image-scan:
       needs: [docker-build-and-push]
       uses: ./.github/workflows/image-scan.yml
-      
+      secrets: inherit
