@@ -1,3 +1,6 @@
   2026-09-14T17:18:37Z	INFO	[vulndb] Need to update DB
   2026-09-14T17:18:37Z	INFO	[vulndb] Downloading vulnerability DB...
   2026-09-14T17:18:37Z	INFO    [vulndb] Downloading artifact...	
+
+
+   devuqaab/github-actions--app:latest (debian 13.6)                                │   debian   │        3        │    -    │
