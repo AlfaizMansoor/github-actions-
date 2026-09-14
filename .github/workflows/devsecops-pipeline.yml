@@ -11,7 +11,8 @@ jobs:
 
     check-secrets:
       uses: ./.github/workflows/secrets-scan.yml
-
+      secrets: inherit
+      
     check-dependency:
       uses: ./.github/workflows/dependency-scan.yml
             
