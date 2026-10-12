@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Alfaiz Mansoori — AI & Data Science student and aspiring DevOps engineer.">
-<title>Alfaiz Mansoori — AI & DevOps</title>
+<meta name="description" content="Alfaiz Mansoori — AI & Data Science student and DevOps / Cloud Engineer.">
+<title>Alfaiz Mansoori — DevOps & Cloud Engineer</title>
 <style>
 :root{
   --bg:#07080d;--text:#f5f7fb;--muted:#a7adbd;--line:rgba(255,255,255,.12);
   --glass:rgba(255,255,255,.055);--glass2:rgba(255,255,255,.085);
-  --accent:#8b7cff;--accent2:#38d9ff;--max:1180px;
+  --accent:#8b7cff;--accent2:#38d9ff;--accent-glow:rgba(139,124,255,.18);
+  --max:1180px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -20,7 +21,7 @@ body{
 body:before{
   content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;
   background:
-    radial-gradient(circle at 15% 15%,rgba(139,124,255,.18),transparent 30%),
+    radial-gradient(circle at 15% 15%,var(--accent-glow),transparent 30%),
     radial-gradient(circle at 85% 25%,rgba(56,217,255,.12),transparent 28%),
     radial-gradient(circle at 50% 100%,rgba(139,124,255,.09),transparent 32%);
 }
@@ -49,7 +50,7 @@ nav{
 .navlinks{display:flex;gap:4px}
 .navlinks a{font-size:.88rem;color:var(--muted);padding:9px 13px;border-radius:12px;transition:.25s}
 .navlinks a:hover{color:var(--text);background:rgba(255,255,255,.08)}
-.menu{display:none;background:none;border:0;color:white;font-size:1.4rem}
+.menu{display:none;background:none;border:0;color:white;font-size:1.4rem;cursor:pointer}
 section{padding:110px 0;scroll-margin-top:70px}
 .hero{min-height:100vh;display:grid;place-items:center;padding-top:130px}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
@@ -63,7 +64,7 @@ h1{font-size:clamp(3.2rem,7vw,6.5rem);line-height:.93;letter-spacing:-.075em;max
 .gradient{background:linear-gradient(100deg,#fff 15%,#a79cff 52%,#62e7ff 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{color:var(--muted);font-size:1.08rem;max-width:650px;margin:25px 0 30px}
 .actions{display:flex;gap:12px;flex-wrap:wrap}
-.btn{padding:13px 18px;border-radius:14px;border:1px solid var(--line);transition:.25s;font-weight:700;font-size:.92rem}
+.btn{padding:13px 18px;border-radius:14px;border:1px solid var(--line);transition:.25s;font-weight:700;font-size:.92rem;display:inline-flex;align-items:center;gap:6px}
 .btn.primary{background:#fff;color:#080910;border-color:#fff}
 .btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(139,124,255,.2)}
 .btn.secondary{background:rgba(255,255,255,.05)}
@@ -73,51 +74,95 @@ h1{font-size:clamp(3.2rem,7vw,6.5rem);line-height:.93;letter-spacing:-.075em;max
   background:var(--accent);filter:blur(75px);opacity:.25;top:-80px;right:-60px;
 }
 .terminal{height:100%;border:1px solid var(--line);border-radius:20px;padding:20px;background:rgba(0,0,0,.27);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;color:#d8dcea}
-.terminal-top{display:flex;gap:6px;margin-bottom:25px}.terminal-top i{width:9px;height:9px;border-radius:50%;background:#666}
-.code-line{margin:10px 0}.key{color:#8b7cff}.str{color:#6de2b5}.comment{color:#666b7b}
+.terminal-top{display:flex;gap:6px;margin-bottom:22px}
+.terminal-top i{width:9px;height:9px;border-radius:50%;background:#666}
+.terminal-top i:nth-child(1){background:#ff5f56}
+.terminal-top i:nth-child(2){background:#ffbd2e}
+.terminal-top i:nth-child(3){background:#27c93f}
+.code-line{margin:8px 0}.key{color:#8b7cff}.str{color:#6de2b5}.comment{color:#666b7b}
 .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:38px}
 .kicker{color:var(--accent2);font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
 h2{font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-.055em;line-height:1}
 .section-head p{color:var(--muted);max-width:480px}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .card{border-radius:24px;padding:28px;transition:.3s;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-7px);border-color:rgba(139,124,255,.35);box-shadow:0 25px 70px rgba(0,0,0,.35)}
+.card:hover{transform:translateY(-5px);border-color:rgba(139,124,255,.35);box-shadow:0 25px 70px rgba(0,0,0,.35)}
 .about .card p{color:var(--muted);font-size:1rem}
+
+/* Skills section styling */
+.filter-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.tab-btn{background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:999px;font-size:.82rem;font-weight:600;cursor:pointer;transition:.2s}
+.tab-btn:hover,.tab-btn.active{background:rgba(139,124,255,.18);border-color:var(--accent);color:#fff}
 .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.skill{min-height:125px;display:flex;flex-direction:column;justify-content:space-between}
-.skill b{font-size:1.05rem}.skill span{color:var(--muted);font-size:.82rem}
-.icon{font-size:1.35rem;color:#b7afff}
-.timeline{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.timeline:before{content:"";position:absolute;top:35px;left:6%;right:6%;height:1px;background:var(--line)}
-.step{padding:25px;border-radius:22px;position:relative}
-.num{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#11131d;border:1px solid rgba(139,124,255,.5);margin-bottom:28px;color:#b9b1ff;font-size:.75rem}
-.step h3{font-size:1rem;margin-bottom:7px}.step p{font-size:.82rem;color:var(--muted)}
+.skill{min-height:130px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s, opacity .25s}
+.skill.hidden{display:none}
+.skill-head{display:flex;justify-content:space-between;align-items:flex-start}
+.skill b{font-size:1.02rem;display:block;margin-top:8px}
+.skill span{color:var(--muted);font-size:.8rem}
+.badge{font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;padding:3px 7px;border-radius:6px;background:rgba(255,255,255,.07);color:var(--accent2);border:1px solid rgba(255,255,255,.08)}
+.icon{font-size:1.4rem;color:#b7afff}
+
+/* Journey roadmap styling */
+.timeline{display:grid;grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));gap:16px}
+.step{padding:25px;border-radius:22px;position:relative;display:flex;flex-direction:column;justify-content:flex-start}
+.num{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#11131d;border:1px solid rgba(139,124,255,.5);margin-bottom:18px;color:#b9b1ff;font-size:.78rem;font-weight:700}
+.step h3{font-size:1.05rem;margin-bottom:6px}
+.step p{font-size:.84rem;color:var(--muted)}
+
+/* Projects */
 .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.project{min-height:330px;border-radius:28px;padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+.project{min-height:330px;border-radius:28px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none}
 .project h3{font-size:1.7rem;letter-spacing:-.04em;margin:8px 0}
 .project p{color:var(--muted);max-width:520px}
-.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}.tag{font-size:.72rem;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:#c6cada}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}
+.tag{font-size:.72rem;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:#c6cada}
 .project-foot{display:flex;justify-content:space-between;align-items:end;margin-top:30px}
 .project-link{color:#fff;font-weight:700;font-size:.86rem}
-.contact{border-radius:32px;padding:60px;text-align:center;position:relative;overflow:hidden}
+
+/* Contact Details Cards */
+.contact{border-radius:32px;padding:50px 30px;text-align:center;position:relative;overflow:hidden}
 .contact:before{content:"";position:absolute;width:400px;height:200px;left:50%;top:-120px;transform:translateX(-50%);background:var(--accent);filter:blur(100px);opacity:.18}
-.contact h2{position:relative;margin-bottom:18px}.contact p{position:relative;color:var(--muted);max-width:600px;margin:0 auto 28px}
+.contact h2{position:relative;margin-bottom:14px}
+.contact p{position:relative;color:var(--muted);max-width:600px;margin:0 auto 26px}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:14px;max-width:850px;margin:0 auto 30px}
+.contact-item{padding:18px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid var(--line);text-align:left;transition:.25s}
+.contact-item:hover{border-color:var(--accent);transform:translateY(-3px)}
+.contact-item span{display:block;font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.contact-item a{font-weight:600;font-size:.9rem;color:#fff;word-break:break-all}
+.contact-item a:hover{color:var(--accent2)}
+
 footer{padding:30px 0 45px;color:#72788a;font-size:.8rem;display:flex;justify-content:space-between}
-.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
-.cursor-glow{position:fixed;width:300px;height:300px;border-radius:50%;pointer-events:none;z-index:-1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(139,124,255,.09),transparent 65%)}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+.cursor-glow{position:fixed;top:0;left:0;width:320px;height:320px;border-radius:50%;pointer-events:none;z-index:-1;margin:-160px 0 0 -160px;background:radial-gradient(circle,rgba(139,124,255,.12),transparent 65%);transform:translate3d(-999px,-999px,0);will-change:transform}
+
+@media(max-width:1024px){
+  .skills{grid-template-columns:repeat(3,1fr)}
+}
 @media(max-width:900px){
-  .hero-grid,.about{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}
-  .timeline{grid-template-columns:repeat(2,1fr)}.timeline:before{display:none}
+  .hero-grid,.about{grid-template-columns:1fr}
+  .skills{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:650px){
-  .container{width:min(var(--max),calc(100% - 24px))}.navlinks{display:none}.menu{display:block}
-  nav.open .navlinks{display:flex;position:absolute;top:58px;left:0;right:0;flex-direction:column;padding:10px;border-radius:18px;background:rgba(10,11,18,.9);border:1px solid var(--line);backdrop-filter:blur(20px)}
-  section{padding:80px 0}.hero{padding-top:110px}.hero-card{min-height:350px}
-  .skills,.projects,.timeline{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:15px}
-  .contact{padding:40px 20px}footer{flex-direction:column;gap:8px}
+  .container{width:min(var(--max),calc(100% - 24px))}
+  .navlinks{display:none}
+  .menu{display:block}
+  nav.open .navlinks{display:flex;position:absolute;top:58px;left:0;right:0;flex-direction:column;padding:10px;border-radius:18px;background:rgba(10,11,18,.94);border:1px solid var(--line);backdrop-filter:blur(20px)}
+  section{padding:80px 0}
+  .hero{padding-top:110px}
+  .hero-card{min-height:350px}
+  .skills,.projects{grid-template-columns:1fr}
+  .section-head{display:block}
+  .section-head p{margin-top:15px}
+  .contact{padding:40px 20px}
+  footer{flex-direction:column;gap:8px}
   h1{font-size:clamp(3rem,16vw,4.5rem)}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transition:none}.card,.btn{transition:none}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{transition:none}
+  .card,.btn{transition:none}
+}
 </style>
 </head>
 <body>
@@ -128,33 +173,34 @@ footer{padding:30px 0 45px;color:#72788a;font-size:.8rem;display:flex;justify-co
   <div class="navlinks">
     <a href="#about">About</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
   </div>
-  <button class="menu" id="menu" aria-label="Open menu">☰</button>
+  <button class="menu" id="menu" aria-label="Open menu" aria-expanded="false">☰</button>
 </nav>
 
 <main>
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div class="reveal">
-      <div class="eyebrow"><span class="dot"></span> AI & Data Science · DevOps</div>
+      <div class="eyebrow"><span class="dot"></span> AI & Data Science · Cloud & DevOps</div>
       <h1>Building software.<br><span class="gradient">Deploying it with confidence.</span></h1>
-      <p>I'm Alfaiz Mansoori — a B.Tech AI & Data Science student focused on DevOps, cloud infrastructure, Linux, containers, CI/CD and practical deployment.</p>
+      <p>I'm Alfaiz Mansoori — a B.Tech AI & Data Science student specializing in Cloud Infrastructure, Container Orchestration, CI/CD, and IaC.</p>
       <div class="actions">
         <a class="btn primary" href="#projects">View Projects ↗</a>
-        <a class="btn secondary" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn secondary" href="https://github.com/AlfaizMansoor" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/alfaiz-mansoor-7491a0431" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
     </div>
     <div class="hero-card glass reveal">
       <div class="terminal">
         <div class="terminal-top"><i></i><i></i><i></i></div>
-        <div class="code-line"><span class="comment">// current focus</span></div>
-        <div class="code-line"><span class="key">role</span>: <span class="str">"DevOps Engineer"</span></div>
-        <div class="code-line"><span class="key">education</span>: <span class="str">"B.Tech AI & DS"</span></div>
-        <div class="code-line"><span class="key">os</span>: <span class="str">"Linux"</span></div>
-        <div class="code-line"><span class="key">containers</span>: <span class="str">"Docker"</span></div>
+        <div class="code-line"><span class="comment">// infrastructure stack</span></div>
+        <div class="code-line"><span class="key">role</span>: <span class="str">"DevOps & Cloud Engineer"</span></div>
         <div class="code-line"><span class="key">cloud</span>: <span class="str">"AWS"</span></div>
-        <div class="code-line"><span class="key">orchestration</span>: <span class="str">"Kubernetes"</span></div>
-        <div class="code-line"><span class="key">automation</span>: <span class="str">"CI/CD"</span></div>
-        <div class="code-line"><span class="key">status</span>: <span class="str">"learning → building → deploying"</span></div>
+        <div class="code-line"><span class="key">containers</span>: [<span class="str">"Docker"</span>, <span class="str">"Kubernetes"</span>, <span class="str">"Helm"</span>]</div>
+        <div class="code-line"><span class="key">iac_config</span>: [<span class="str">"Terraform"</span>, <span class="str">"Ansible"</span>]</div>
+        <div class="code-line"><span class="key">cicd</span>: [<span class="str">"GitHub Actions"</span>, <span class="str">"GitLab CI"</span>, <span class="str">"Jenkins"</span>]</div>
+        <div class="code-line"><span class="key">observability</span>: <span class="str">"Grafana"</span></div>
+        <div class="code-line"><span class="key">scripting</span>: [<span class="str">"Bash/Shell"</span>, <span class="str">"Python"</span>]</div>
+        <div class="code-line"><span class="key">contact</span>: <span class="str">"alfaizmansoordev@gmail.com"</span></div>
       </div>
     </div>
   </div>
@@ -162,58 +208,199 @@ footer{padding:30px 0 45px;color:#72788a;font-size:.8rem;display:flex;justify-co
 
 <section id="about">
 <div class="container">
-  <div class="section-head reveal"><div><div class="kicker">01 · About</div><h2>A builder with an<br>infrastructure mindset.</h2></div>
-  <p>Focused on turning development work into reliable, repeatable and deployable systems.</p></div>
+  <div class="section-head reveal">
+    <div><div class="kicker">01 · About</div><h2>A builder with an<br>infrastructure mindset.</h2></div>
+    <p>Connecting software development with reproducible, automated cloud environments.</p>
+  </div>
   <div class="about">
-    <article class="card glass reveal"><p>I'm pursuing a B.Tech in Artificial Intelligence & Data Science at Modi Institute of Technology, Kota. Alongside AI/DS, I'm developing hands-on skills in Linux, Git, Docker, cloud and modern deployment practices.</p></article>
-    <article class="card glass reveal"><p>I enjoy learning by building real projects, troubleshooting infrastructure and understanding what happens between writing code and running it reliably in production.</p></article>
+    <article class="card glass reveal"><p>I'm pursuing a B.Tech in Artificial Intelligence & Data Science at Modi Institute of Technology, Kota. Alongside AI/DS, I develop hands-on production infrastructure using AWS, Kubernetes, Terraform, and automated CI/CD pipelines.</p></article>
+    <article class="card glass reveal"><p>I treat infrastructure as code: reproducible, versioned, and monitored. Whether designing Helm charts, writing Ansible playbooks, or debugging network sockets, I focus on system reliability from day zero.</p></article>
   </div>
 </div>
 </section>
 
 <section id="skills">
 <div class="container">
-  <div class="section-head reveal"><div><div class="kicker">02 · Toolkit</div><h2>Tools I work with.</h2></div><p>A growing stack centered around automation, deployment and cloud infrastructure.</p></div>
-  <div class="skills">
-    <article class="skill card glass reveal"><span class="icon">⌘</span><b>Python</b><span>Programming & automation</span></article>
-    <article class="skill card glass reveal"><span class="icon">◉</span><b>Linux</b><span>Systems & command line</span></article>
-    <article class="skill card glass reveal"><span class="icon">⑂</span><b>Git / GitHub</b><span>Version control</span></article>
-    <article class="skill card glass reveal"><span class="icon">□</span><b>Docker</b><span>Containerization</span></article>
-    <article class="skill card glass reveal"><span class="icon">☁</span><b>AWS</b><span>Cloud infrastructure</span></article>
-    <article class="skill card glass reveal"><span class="icon">△</span><b>Kubernetes</b><span>Container orchestration</span></article>
-    <article class="skill card glass reveal"><span class="icon">↻</span><b>CI / CD</b><span>Automated delivery</span></article>
-    <article class="skill card glass reveal"><span class="icon">◈</span><b>Web</b><span>HTML · CSS · JavaScript</span></article>
+  <div class="section-head reveal">
+    <div><div class="kicker">02 · Toolkit</div><h2>Tools & Technologies.</h2></div>
+    <p>19 technologies organized across the DevOps lifecycle. Filter by domain or explore the stack.</p>
+  </div>
+
+  <div class="filter-tabs reveal">
+    <button class="tab-btn active" data-filter="all">All (19)</button>
+    <button class="tab-btn" data-filter="cloud-iac">Cloud & IaC</button>
+    <button class="tab-btn" data-filter="containers">Containers & K8s</button>
+    <button class="tab-btn" data-filter="cicd">CI/CD & Automation</button>
+    <button class="tab-btn" data-filter="core">Core & Monitoring</button>
+    <button class="tab-btn" data-filter="collaboration">Collab & Dev</button>
+  </div>
+
+  <div class="skills" id="skills-grid">
+    <!-- Cloud & IaC -->
+    <article class="skill card glass reveal" data-category="cloud-iac">
+      <div class="skill-head"><span class="icon">☁</span><span class="badge">Cloud</span></div>
+      <div><b>AWS</b><span>EC2, S3, VPC, IAM, RDS & EKS</span></div>
+    </article>
+    <article class="skill card glass reveal" data-category="cloud-iac">
+      <div class="skill-head"><span class="icon">⬢</span><span class="badge">IaC</span></div>
+      <div><b>Terraform</b><span>Declarative infrastructure provisioning</span></div>
+    </article>
+    <article class="skill card glass reveal" data-category="cloud-iac">
+      <div class="skill-head"><span class="icon">⌁</span><span class="badge">Config Mgmt</span></div>
+      <div><b>Ansible</b><span>Agentless server automation & playbooks</span></div>
+    </article>
+
+    <!-- Containers & K8s -->
+    <article class="skill card glass reveal" data-category="containers">
+      <div class="skill-head"><span class="icon">△</span><span class="badge">Orchestration</span></div>
+      <div><b>Kubernetes</b><span>Deployments, Services, Ingress, Pods</span></div>
+    </article>
+    <article class="skill card glass reveal" data-category="containers">
+      <div class="skill-head"><span class="icon">⎈</span><span class="badge">Package Mgr</span></div>
+      <div><b>Helm</b><span>Kubernetes application chart management</span></div>
+    </article>
+    <article class="skill card glass reveal" data-category="containers">
+      <div class="skill-head"><span class="icon">□</span><span class="badge">Containers</span></div>
+      <div><b>Docker</b><span>Multi-stage builds, container engines</span></div>
+    </article>
+    <article class="skill card glass reveal" data-category="containers">
+      <div class="skill-head"><span class="icon">◫</span><span class="badge">Containers</span></div>
+      <div><b>Docker-Compose</b><span>Multi-container local environments</span></div>
+    </article>
+    <article class="skill card glass reveal" data-category="containers">
+      <div class="skill-head"><span class="icon">⊞</span><span class="badge">Registry</span></div>
+      <div><b>Docker Hub</b><span>Artifact registry & versioned images</span></div>
+    </article>
+
+    <!-- CI/CD & Automation -->
+    <article class="skill card glass reveal" data-category="cicd">
+      <div class="skill-head"><span class="icon">↻</span><span class="badge">CI/CD</span></div>
+      <div><b>GitHub Actions</b><span>Workflow pipelines, triggers & secrets</span></div>
+    </article>
+    <article class="skill card glass reveal" data-category="cicd">
+      <div class="skill-head"><span class="icon">🦊</span><span class="badge">CI/CD</span></div>
+      <div><b>GitLab CI</b><span>Auto DevOps, runner orchestration</span></div>
+    </article>
+    <article class="skill card glass reveal" data-category="cicd">
+      <div class="skill-head"><span class="icon">⚙</span><span class="badge">CI/CD</span></div>
+      <div><b>Jenkins</b><span>Freestyle & Declarative Pipelines</span></div>
+    </article>
+    <article class="skill card glass reveal" data-category="cicd">
+      <div class="skill-head"><span class="icon">⌨</span><span class="badge">Scripting</span></div>
+      <div><b>Shell Script</b><span>Bash automation, cron & system jobs</span></div>
+    </article>
+
+    <!-- Core & Monitoring -->
+    <article class="skill card glass reveal" data-category="core">
+      <div class="skill-head"><span class="icon">📈</span><span class="badge">Observability</span></div>
+      <div><b>Grafana</b><span>Metrics visualization & live dashboards</span></div>
+    </article>
+    <article class="skill card glass reveal" data-category="core">
+      <div class="skill-head"><span class="icon">◉</span><span class="badge">OS</span></div>
+      <div><b>Linux</b><span>Processes, permissions, bash internals</span></div>
+    </article>
+    <article class="skill card glass reveal" data-category="core">
+      <div class="skill-head"><span class="icon">🌐</span><span class="badge">Network</span></div>
+      <div><b>Networking</b><span>DNS, TCP/IP, Subnetting, SSL/TLS, OSI</span></div>
+    </article>
+    <article class="skill card glass reveal" data-category="core">
+      <div class="skill-head"><span class="icon">⌘</span><span class="badge">Languages</span></div>
+      <div><b>Python</b><span>Scripting, REST APIs, data automation</span></div>
+    </article>
+
+    <!-- Collaboration & Dev -->
+    <article class="skill card glass reveal" data-category="collaboration">
+      <div class="skill-head"><span class="icon">▤</span><span class="badge">Agile</span></div>
+      <div><b>Jira</b><span>Sprint planning, issue tracking & Kanban</span></div>
+    </article>
+    <article class="skill card glass reveal" data-category="collaboration">
+      <div class="skill-head"><span class="icon">💬</span><span class="badge">Comms</span></div>
+      <div><b>Slack</b><span>Webhooks, channel alerts & ChatOps</span></div>
+    </article>
+    <article class="skill card glass reveal" data-category="collaboration">
+      <div class="skill-head"><span class="icon">◈</span><span class="badge">Frontend</span></div>
+      <div><b>HTML & CSS</b><span>Semantic interfaces & responsive design</span></div>
+    </article>
   </div>
 </div>
 </section>
 
 <section id="journey">
 <div class="container">
-  <div class="section-head reveal"><div><div class="kicker">03 · Journey</div><h2>From terminal<br>to production.</h2></div><p>A practical learning path built around understanding systems instead of just collecting tools.</p></div>
+  <div class="section-head reveal">
+    <div><div class="kicker">03 · Journey</div><h2>From terminal<br>to production.</h2></div>
+    <p>A structured roadmap showing how individual tools map to enterprise delivery.</p>
+  </div>
   <div class="timeline">
-    <article class="step glass reveal"><div class="num">01</div><h3>Linux</h3><p>Learn systems, processes, storage, networking and the command line.</p></article>
-    <article class="step glass reveal"><div class="num">02</div><h3>Git</h3><p>Build disciplined version control and collaborative workflows.</p></article>
-    <article class="step glass reveal"><div class="num">03</div><h3>Docker</h3><p>Package applications into portable, repeatable containers.</p></article>
-    <article class="step glass reveal"><div class="num">04</div><h3>Cloud</h3><p>Understand compute, networking, storage and cloud deployment.</p></article>
-    <article class="step glass reveal"><div class="num">05</div><h3>CI/CD</h3><p>Automate testing, builds and delivery pipelines.</p></article>
-    <article class="step glass reveal"><div class="num">06</div><h3>Kubernetes</h3><p>Move from individual containers to orchestrated workloads.</p></article>
-    <article class="step glass reveal"><div class="num">07</div><h3>Production</h3><p>Combine reliability, observability, security and automation.</p></article>
+    <article class="step card glass reveal">
+      <div class="num">01</div>
+      <h3>Systems & Network Foundation</h3>
+      <p>Linux internals, file hierarchies, TCP/IP, DNS, and automated Shell scripting for sysadmin tasks.</p>
+    </article>
+    <article class="step card glass reveal">
+      <div class="num">02</div>
+      <h3>Containers & Packaging</h3>
+      <p>Docker container isolation, multi-service Docker-Compose environments, and Docker Hub management.</p>
+    </article>
+    <article class="step card glass reveal">
+      <div class="num">03</div>
+      <h3>Cloud & Infrastructure as Code</h3>
+      <p>AWS resource architecture provisioned via declarative Terraform HCL and configured with Ansible.</p>
+    </article>
+    <article class="step card glass reveal">
+      <div class="num">04</div>
+      <h3>CI/CD Pipeline Automation</h3>
+      <p>Automated build, test, and release cycles built using GitHub Actions, GitLab CI, and Jenkins.</p>
+    </article>
+    <article class="step card glass reveal">
+      <div class="num">05</div>
+      <h3>K8s Orchestration & Helm</h3>
+      <p>Cluster deployment, ingress management, rolling updates, and package templates using Helm.</p>
+    </article>
+    <article class="step card glass reveal">
+      <div class="num">06</div>
+      <h3>Observability & Agile Ops</h3>
+      <p>Real-time metrics with Grafana dashboards, Jira ticketing, and Slack alert integrations.</p>
+    </article>
   </div>
 </div>
 </section>
 
 <section id="projects">
 <div class="container">
-  <div class="section-head reveal"><div><div class="kicker">04 · Selected work</div><h2>Things I've<br>been building.</h2></div><p>Projects are presented honestly — no invented users, revenue or performance claims.</p></div>
+  <div class="section-head reveal">
+    <div><div class="kicker">04 · Selected work</div><h2>Things I've<br>been building.</h2></div>
+    <p>Hands-on engineering projects combining development, containerization, and automation.</p>
+  </div>
   <div class="projects">
-    <article class="project glass reveal">
-      <div><div class="kicker">E-commerce · Web</div><h3>Hadoti Furnitures</h3><p>A modern furniture e-commerce project designed around a clean customer experience and manageable product operations.</p><div class="tags"><span class="tag">Web</span><span class="tag">E-commerce</span><span class="tag">Deployment</span></div></div>
-      <div class="project-foot"><span class="project-link">Project showcase</span><span>↗</span></div>
-    </article>
-    <article class="project glass reveal">
-      <div><div class="kicker">DevOps · Learning</div><h3>90 Days of DevOps</h3><p>A structured hands-on journey covering Linux, Git, Docker, cloud, CI/CD and production-oriented DevOps practices.</p><div class="tags"><span class="tag">Linux</span><span class="tag">Docker</span><span class="tag">AWS</span><span class="tag">CI/CD</span></div></div>
-      <div class="project-foot"><span class="project-link">Learning portfolio</span><span>↗</span></div>
-    </article>
+    <a class="project card glass reveal" href="https://github.com/AlfaizMansoor" target="_blank" rel="noopener">
+      <div>
+        <div class="kicker">E-commerce · Production Web</div>
+        <h3>Hadoti Furnitures</h3>
+        <p>A full-stack furniture platform with containerized services, automated deployments, and reproducible environments.</p>
+        <div class="tags">
+          <span class="tag">Docker</span>
+          <span class="tag">AWS</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">Web</span>
+        </div>
+      </div>
+      <div class="project-foot"><span class="project-link">View Repository</span><span>↗</span></div>
+    </a>
+    <a class="project card glass reveal" href="https://github.com/AlfaizMansoor" target="_blank" rel="noopener">
+      <div>
+        <div class="kicker">Cloud & IaC · Labs</div>
+        <h3>90 Days of DevOps</h3>
+        <p>A structured technical journey documenting hands-on implementations across Terraform, Kubernetes, Helm, Ansible, and Jenkins.</p>
+        <div class="tags">
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Terraform</span>
+          <span class="tag">Grafana</span>
+          <span class="tag">GitHub Actions</span>
+        </div>
+      </div>
+      <div class="project-foot"><span class="project-link">Learning Portfolio</span><span>↗</span></div>
+    </a>
   </div>
 </div>
 </section>
@@ -222,36 +409,106 @@ footer{padding:30px 0 45px;color:#72788a;font-size:.8rem;display:flex;justify-co
 <div class="container">
   <div class="contact glass reveal">
     <div class="kicker">05 · Contact</div>
-    <h2>Let's build something useful.</h2>
-    <p>For opportunities, collaborations, technical discussions or interesting projects.</p>
+    <h2>Let's build something scalable.</h2>
+    <p>Open for DevOps opportunities, cloud engineering roles, collaborations, and technical discussions.</p>
+    
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span>Primary Email</span>
+        <a href="mailto:alfaizmansoordev@gmail.com">alfaizmansoordev@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span>Alternate Email</span>
+        <a href="mailto:devuqaab@gmail.com">devuqaab@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span>Direct Phone / WhatsApp</span>
+        <a href="tel:+917850985334">+91 7850985334</a>
+      </div>
+      <div class="contact-item">
+        <span>GitHub Profile</span>
+        <a href="https://github.com/AlfaizMansoor" target="_blank" rel="noopener">github.com/AlfaizMansoor</a>
+      </div>
+    </div>
+
     <div class="actions" style="justify-content:center">
-      <a class="btn primary" href="mailto:your-email@example.com">Email Me ↗</a>
-      <a class="btn secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
-      <a class="btn secondary" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn primary" href="mailto:alfaizmansoordev@gmail.com">Email Me ↗</a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/alfaiz-mansoor-7491a0431" target="_blank" rel="noopener">LinkedIn Profile ↗</a>
+      <a class="btn secondary" href="https://github.com/AlfaizMansoor" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn secondary" href="tel:+917850985334">Call / SMS ↗</a>
     </div>
   </div>
 </div>
 </section>
 </main>
 
-<footer class="container"><span>© 2026 Alfaiz Mansoori</span><span>Built with curiosity & code.</span></footer>
+<footer class="container">
+  <span>© 2026 Alfaiz Mansoori</span>
+  <span>Reliability through code & automation.</span>
+</footer>
 
 <script>
-const nav=document.getElementById('nav'),menu=document.getElementById('menu');
-menu.addEventListener('click',()=>nav.classList.toggle('open'));
-document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+// Mobile Navigation Toggle
+const nav = document.getElementById('nav');
+const menu = document.getElementById('menu');
 
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+menu.addEventListener('click', () => {
+  const isOpen = nav.classList.toggle('open');
+  menu.setAttribute('aria-expanded', isOpen);
+});
 
-const glow=document.getElementById('glow');
-if(window.matchMedia('(pointer:fine)').matches){
-  window.addEventListener('pointermove',e=>{
-    glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px';
+document.querySelectorAll('.navlinks a').forEach(a => {
+  a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menu.setAttribute('aria-expanded', 'false');
+  });
+});
+
+// Scroll Reveal Observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// GPU-accelerated Cursor Glow (no layout thrashing)
+const glow = document.getElementById('glow');
+if (window.matchMedia('(pointer:fine)').matches) {
+  let mouseX = -999, mouseY = -999;
+  let rafId = null;
+
+  window.addEventListener('pointermove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (!rafId) {
+      rafId = requestAnimationFrame(() => {
+        glow.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+        rafId = null;
+      });
+    }
   });
 }
+
+// Skill Category Filter
+const tabs = document.querySelectorAll('.tab-btn');
+const skillCards = document.querySelectorAll('.skill');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    const filter = tab.getAttribute('data-filter');
+    skillCards.forEach(card => {
+      if (filter === 'all' || card.getAttribute('data-category') === filter) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
 </script>
 </body>
 </html>
